@@ -1,0 +1,1 @@
+export const APP_KEY = process.env.REACT_APP_APP_KEY;

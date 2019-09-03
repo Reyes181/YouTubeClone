@@ -1,33 +1,362 @@
-.App {
-  text-align: center;
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: #131313;
+    font-family: 'Roboto';
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+header {
+    height: 5%;
+    padding: 10px;
+    background-color: #282828;
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.left_icons {
+    flex-basis: 25%;
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.burger_icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    flex-basis: 30%;
+    align-self: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.youtube_icon {
+    flex-basis: 70%;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    align-self: center;
+}
+
+.search_box {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 80%;
+    align-self: center;
+    display: flex;
+}
+
+input {
+    width: 80%;
+    background-color: rgb(32, 30, 30);
+    border: none;
+    padding: 8px;
+    flex-basis: 90%;
+    color: white;
+}
+
+input:focus {
+    outline: none
+}
+
+button {
+    flex-basis: 10%;
+    background: hsla(0, -4%, 20%, 1);
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {outline:0;}
+
+button img {
+    width: 20px;
+    opacity: 0.7;
+}
+
+button img:hover {
+    opacity: 1;
+}
+
+.right_icons {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bell_logo {
+    flex-basis: 70%;
+    width: 20px;
+    height: 20px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    align-self: center;
+    margin-left: 70%;
+}
+
+.user_logo {
+    flex-basis: 30%;
+    width: 20px;
+    height: 20px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    align-self: center;
+    margin-right: 10%;
+}
+
+/* Main Content */
+.main_container {
+    display: flex;
+    width: 90%;
+    margin: 2em auto;
+}
+
+.selected_video {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.main_video {
+    flex-basis: 70%;
+}
+
+.main_content {
+    color: white;
+}
+
+.main_title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.main_views {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: dimgray;
+}
+
+.border {
+    border-bottom: 0.5px solid dimgray;
+}
+
+.main_channel_box {
+    display: flex;
+}
+
+.channel_icon {
+    flex-basis: 10%;
+    width: 40px;
+    height: 40px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+    margin-top: 0.9em;
+}
+
+.detail_box {
+    flex-basis: 70%
+}
+
+.main_channel {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.main_published {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.main_desc {
+    font-size: 0.8rem;
+}
+
+.subscribe_box {
+    flex-basis: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub_button {
+    align-self: center;
+    background: red;
+    text-align: center;
+    padding: 0.6em;
+    margin: 10px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Video List */
+.video_list {
+    flex-basis: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+
+.video_items {
+    display: flex;
+    margin-bottom: 1em;
+    flex-basis: 100%;
+    height: 6em;
+}
+
+.left_video {
+    flex-basis: 50%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    cursor: pointer;
+}
+
+.left_desc {
+    flex-basis: 50%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25rem;
+}
+
+.left_channel {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: dimgray;
+    margin: 0;
+}
+
+/* Loading */
+.loading {
+    flex-basis: 100%;
+    height: 90%;
+}
+
+.spinner {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    width: 100px;
+    height: 200px;
+    background-position: center !important;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media(max-width: 1000px){
+    .search_box {
+        flex-basis: 100%;
+    }
+    .burger_icon {
+        display: none;
+    }
+    .youtube_icon {
+        flex-basis: 100%;
+        background-position: center !important;
+    }
+    .right_icons {
+        display: none;
+    }
+    .main_container {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+    .selected_video {
+        flex-basis: 100%;
+        height: 700px;
+    }
+    .main_video {
+        flex-basis: 100%;
+    }
+    .main_title {
+        padding: .5em;
+    }
+    .main_views {
+        padding: .5em;
+    }
+    .main_channel_box {
+        flex-wrap: wrap;
+        padding: 0.5em;
+    }
+    /* .channel_icon {
+        background-position: center !important;
+        flex-basis: 40%;
+    } */
+    .detail_box {
+        flex-basis: 100%;
+        order: 3;
+        padding: 0.5em;
+    }
+    /* .subscribe_box {
+        flex-basis: 60%;
+    } */
+    .video_list {
+        margin: 0 auto;
+        flex-basis: 100%;
+    }
+    .left_desc {
+        max-width: 18.75rem;
+    }
+}
+
+@media(max-width: 700px){
+    .search_box {
+        flex-basis: 100%;
+    }
+    .left_icons, .right_icons {
+        display: none;
+    }
+    .main_container {
+        width: 100%;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .selected_video {
+        flex-basis: 100%;
+        height: 600px;
+    }
+    .main_video {
+        flex-basis: 100%;
+    }
+    .main_title {
+        padding: .5em;
+    }
+    .main_views {
+        padding: .5em;
+    }
+    .main_channel_box {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .channel_icon {
+        background-position: center !important;
+        flex-basis: 40%;
+    }
+    .detail_box {
+        flex-basis: 100%;
+        order: 3;
+        padding: 0.5em;
+    }
+    .subscribe_box {
+        flex-basis: 60%;
+    }
+    .video_list {
+        margin: 0 auto;
+        flex-basis: 100%;
+    }
+    .left_desc {
+        max-width: 18.75rem;
+    }
 }
